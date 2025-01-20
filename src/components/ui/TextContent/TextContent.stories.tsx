@@ -6,19 +6,38 @@ const meta = {
   component: TextContent,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A flexible text component that supports different sizes and HTML elements.',
+      },
+    },
   },
   tags: ['autodocs'],
   argTypes: {
     size: {
       control: 'select',
       options: ['xl', 'lg', 'md', 'sm'],
+      description: 'Controls the text size and line height',
+      table: {
+        defaultValue: { summary: 'md' },
+      },
     },
     as: {
       control: 'select',
       options: ['span', 'div', 'p'],
+      description: 'The HTML element to render',
+      table: {
+        defaultValue: { summary: 'div' },
+      },
     },
     className: {
       control: 'text',
+      description: 'Additional CSS classes to apply',
+    },
+    children: {
+      control: 'text',
+      description: 'The content to display',
     },
   },
 } satisfies Meta<typeof TextContent>;
@@ -27,55 +46,44 @@ export default meta;
 
 type Story = StoryObj<typeof TextContent>;
 
-export const ExtraLarge: Story = {
-  args: {
-    size: 'xl',
-    children: 'Extra Large Text Content',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'lg',
-    children: 'Large Text Content',
-  },
-};
-
-export const Medium: Story = {
+export const Playground: Story = {
   args: {
     size: 'md',
-    children: 'Medium Text Content',
+    children: 'Example text content',
   },
 };
 
-export const Small: Story = {
-  args: {
-    size: 'sm',
-    children: 'Small Text Content',
-  },
+export const AllSizes: Story = {
+  render: () => (
+    <div className='space-y-4'>
+      <TextContent size='xl'>Extra Large Text (xl)</TextContent>
+      <TextContent size='lg'>Large Text (lg)</TextContent>
+      <TextContent size='md'>Medium Text (md)</TextContent>
+      <TextContent size='sm'>Small Text (sm)</TextContent>
+    </div>
+  ),
 };
 
-export const CustomElement: Story = {
-  args: {
-    size: 'md',
-    as: 'p',
-    children: 'Text Content as paragraph element',
-  },
-};
-
-export const WithCustomClass: Story = {
+export const WithCustomStyling: Story = {
   args: {
     size: 'md',
-    className: 'italic underline',
-    children: 'Text Content with custom styling',
+    className: 'italic text-blue-600 font-semibold',
+    children: 'Custom styled text',
   },
 };
 
-export const MultilineContent: Story = {
-  args: {
-    size: 'md',
-    children: `This is a longer piece of text content that spans multiple lines.
-    It demonstrates how the component handles line breaks and longer content blocks.
-    The line height settings ensure proper readability.`,
-  },
+export const AsHTMLElements: Story = {
+  render: () => (
+    <div className='space-y-4'>
+      <TextContent size='md' as='p'>
+        As paragraph
+      </TextContent>
+      <TextContent size='md' as='span'>
+        As span
+      </TextContent>
+      <TextContent size='md' as='div'>
+        As div
+      </TextContent>
+    </div>
+  ),
 };
