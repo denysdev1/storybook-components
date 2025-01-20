@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 export default {
+  darkMode: ['class'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,9 +10,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        // Utility Colors
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         amber: {
           DEFAULT: '#F7934C',
         },
@@ -22,7 +22,6 @@ export default {
           DEFAULT: '#121213',
           disabled: '#12121366',
         },
-        // State Colors
         success: {
           DEFAULT: '#1FA412',
           aa: '#096E00',
@@ -31,53 +30,93 @@ export default {
           DEFAULT: '#F9564F',
           aa: '#D52F2F',
         },
-        // Surface Colors
         surface: {
           crystal: {
+            '60': '#FFFFFF99',
             DEFAULT: '#FFFFFF',
-            60: '#FFFFFF99',
           },
           pearl: '#F2F2F2',
           'light-satin': '#CAC9C0',
           dark: '#121213',
         },
-        // Supplementary Colors
         supplementary: {
-          amber: {
-            DEFAULT: '#F7934C',
-            30: '#F7934C4D',
-          },
-          1: {
+          '1': {
+            '10': '#42776C1A',
             DEFAULT: '#42776C',
-            10: '#42776C1A',
           },
-          2: '#7B4926',
-          3: {
+          '2': '#7B4926',
+          '3': {
+            '10': '#B33F621A',
+            '20': '#B33F6233',
             DEFAULT: '#B33F62',
-            20: '#B33F6233',
-            10: '#B33F621A',
           },
-          4: {
+          '4': {
+            '40': '#FBD1A266',
             DEFAULT: '#FBD1A2',
-            40: '#FBD1A266',
           },
-          5: '#8C9364',
-          6: {
+          '5': '#8C9364',
+          '6': {
+            '10': '#4273931A',
             DEFAULT: '#427393',
-            10: '#4273931A',
           },
-          7: '#3E2513',
+          '7': '#3E2513',
+          amber: {
+            '30': '#F7934C4D',
+            DEFAULT: '#F7934C',
+          },
         },
-        // Stroke Colors
         stroke: {
           light: '#1212131A',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        chart: {
+          '1': 'hsl(var(--chart-1))',
+          '2': 'hsl(var(--chart-2))',
+          '3': 'hsl(var(--chart-3))',
+          '4': 'hsl(var(--chart-4))',
+          '5': 'hsl(var(--chart-5))',
         },
       },
       fontFamily: {
         manrope: ['var(--font-manrope)'],
       },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 } satisfies Config;
 
