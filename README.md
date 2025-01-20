@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Design System with Storybook
+
+[Storybook Preview](https://storybook-components-red.vercel.app/)
+
+A modern, responsive design system built with Next.js 15, TypeScript, and Storybook, featuring pixel-perfect components and comprehensive testing.
+
+## Tech Stack & Architecture
+
+### Core Technologies
+
+- **Next.js 15**: Latest App Router for optimal performance and SEO
+- **TypeScript**: For type safety and better developer experience
+- **Tailwind CSS**: For utility-first styling with design system tokens
+- **Storybook**: For component documentation and visual testing
+- **Vitest**: For unit testing with React Testing Library
+- **Radix UI/shadcn/ui**: For accessible primitive components
+
+### Design System Architecture
+
+- Atomic design principles with composable components
+- Consistent type definitions and interfaces
+- Shared utilities and hooks
+- Standardized naming conventions and file structure
+
+## Development Process
+
+### Component Development Workflow
+
+1. Define component requirements and API
+2. Create component with TypeScript types
+3. Implement Storybook stories for all variants
+4. Write comprehensive unit tests
+5. Document usage and props
+6. Review and refine accessibility
+
+### Pixel Perfect Implementation
+
+- Used design tokens for consistent spacing, typography, and colors
+- Implemented responsive breakpoints with Tailwind
+- Created reusable utility classes for common patterns
+- Maintained consistent component APIs
+- Extensive cross-browser testing
+
+### Quality Assurance
+
+- ESLint and TypeScript for code quality
+- Vitest for unit testing
+- Storybook for visual regression testing
+- Accessibility testing with axe-core
+- Responsive design testing across devices
+
+## AI-Assisted Development
+
+### How AI Enhanced the Development Process
+
+1. **Code Generation**
+
+   - Used AI to generate initial component boilerplate
+   - Automated test case generation
+   - Quick implementation of repetitive patterns
+
+2. **Code Quality**
+
+   - AI suggestions for type improvements
+   - Identification of potential edge cases
+   - Performance optimization recommendations
+
+3. **Documentation**
+
+   - Automated generation of component documentation
+   - Story creation for Storybook
+   - API documentation and examples
+
+4. **Problem Solving**
+   - Quick debugging assistance
+   - Pattern recognition for common issues
+   - Alternative implementation suggestions
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Start Storybook:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run storybook
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available Scripts
 
-## Learn More
+- `npm run dev` - Start development server
+- `npm run build` - Build production bundle
+- `npm run test` - Run unit tests
+- `npm run storybook` - Start Storybook
+- `npm run lint` - Run ESLint
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/components`: Atomic components
+- `src/stories`: Storybook stories
+- `src/tests`: Unit tests
+- `src/types`: TypeScript types
+- `src/utils`: Shared utilities
+- `src/hooks`: Shared hooks
+- `src/lib`: Shared libraries
+- `src/styles`: Global styles
+- `src/app`: Next.js app router
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
