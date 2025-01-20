@@ -1,8 +1,8 @@
 export enum CurrencyCode {
   CANADA = 'CAD',
-  UNITED_STATES = 'USD',
+  US = 'USD',
   FRANCE = 'EUR',
-  UNITED_KINGDOM = 'GBP',
+  UK = 'GBP',
 }
 
 export type CurrencyInfo = {
