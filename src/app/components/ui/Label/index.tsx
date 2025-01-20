@@ -17,9 +17,12 @@ const variantStyles: Record<LabelVariant, string> = {
   graph: 'text-xs/[15.6px] text-light-text',
 } as const;
 
-export const Label: FC<LabelProps> = ({ children, variant, className, as }) => {
-  const Component = as || 'span';
-
+export const Label: FC<LabelProps> = ({
+  children,
+  variant,
+  className,
+  as: Component = 'span',
+}) => {
   return (
     <Component className={`${variantStyles[variant]} ${className ?? ''}`}>
       {children}
