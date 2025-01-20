@@ -73,6 +73,9 @@ export default {
           light: '#1212131A',
         },
       },
+      fontFamily: {
+        manrope: ['var(--font-manrope)'],
+      },
     },
   },
   plugins: [],
