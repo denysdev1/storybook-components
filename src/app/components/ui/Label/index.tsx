@@ -1,12 +1,12 @@
-import { ElementType, FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export type LabelVariant = 'lg' | 'data' | 'section' | 'xsmall' | 'graph';
 
 export type LabelProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   variant: LabelVariant;
   className?: string;
-  as?: ElementType;
+  as?: 'span' | 'div' | 'label' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 };
 
 const variantStyles: Record<LabelVariant, string> = {
