@@ -19,7 +19,7 @@ A modern, responsive design system built with Next.js 15, TypeScript, and Storyb
 
 - Atomic design principles with composable components
 - Consistent type definitions and interfaces
-- Shared utilities and hooks
+- Shared utilities
 - Standardized naming conventions and file structure
 
 ## Development Process
@@ -39,14 +39,12 @@ A modern, responsive design system built with Next.js 15, TypeScript, and Storyb
 - Implemented responsive breakpoints with Tailwind
 - Created reusable utility classes for common patterns
 - Maintained consistent component APIs
-- Extensive cross-browser testing
 
 ### Quality Assurance
 
 - ESLint and TypeScript for code quality
 - Vitest for unit testing
 - Storybook for visual regression testing
-- Accessibility testing with axe-core
 - Responsive design testing across devices
 
 ## AI-Assisted Development
@@ -63,13 +61,11 @@ A modern, responsive design system built with Next.js 15, TypeScript, and Storyb
 
    - AI suggestions for type improvements
    - Identification of potential edge cases
-   - Performance optimization recommendations
 
 3. **Documentation**
 
    - Automated generation of component documentation
    - Story creation for Storybook
-   - API documentation and examples
 
 4. **Problem Solving**
    - Quick debugging assistance
@@ -107,13 +103,10 @@ npm run storybook
 
 ## Project Structure
 
-- `src/components`: Atomic components
-- `src/stories`: Storybook stories
-- `src/tests`: Unit tests
-- `src/types`: TypeScript types
-- `src/utils`: Shared utilities
-- `src/hooks`: Shared hooks
-- `src/lib`: Shared libraries
-- `src/styles`: Global styles
+- `src/components`: Atomic components including Storybook stories, and unit tests
+- `src/components/ui`: Generic components including Storybook stories, and unit tests
+- `src/lib`: Shared libraries configurations
 - `src/app`: Next.js app router
+- `src/types`: TypeScript types
+- `src/assets`: Assets
 
