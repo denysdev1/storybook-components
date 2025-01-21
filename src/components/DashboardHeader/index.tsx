@@ -44,7 +44,7 @@ export const DashboardHeader: FC<DashboardHeaderProps> = ({ userName }) => {
                 selectedCurrency={selectedCurrency}
                 onCurrencyChange={setSelectedCurrency}
               />
-              <AddDropdown onAddClick={() => {}} />
+              <AddDropdown />
             </div>
           </div>
         </div>
