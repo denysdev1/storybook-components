@@ -1,43 +1,17 @@
 'use client';
 
+import Image from 'next/image';
 import { FC, useState } from 'react';
 import { CurrencySelect } from '@/components/CurrencySelect';
 import { Currency, CurrencyCode } from '@/types/currency';
+import magnifyingGlassSrc from '@/assets/icons/magnifying-glass.svg';
+import { AddDropdown } from '../AddDropdown';
 
 type DashboardHeaderProps = {
   userName: string;
-  onAddClick?: () => void;
 };
 
-const AddIcon: FC = () => (
-  <svg
-    width='16'
-    height='16'
-    viewBox='0 0 16 16'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-    className='text-gray-600'
-    aria-hidden='true'
-  >
-    <path
-      d='M8 3.33334V12.6667'
-      stroke='currentColor'
-      strokeWidth='1.5'
-      strokeLinecap='round'
-    />
-    <path
-      d='M3.33331 8H12.6666'
-      stroke='currentColor'
-      strokeWidth='1.5'
-      strokeLinecap='round'
-    />
-  </svg>
-);
-
-export const DashboardHeader: FC<DashboardHeaderProps> = ({
-  userName,
-  onAddClick,
-}) => {
+export const DashboardHeader: FC<DashboardHeaderProps> = ({ userName }) => {
   const [selectedCurrency, setSelectedCurrency] = useState<Currency>({
     code: CurrencyCode.CANADA,
   });
@@ -53,19 +27,24 @@ export const DashboardHeader: FC<DashboardHeaderProps> = ({
             <h2 className='text-obsidian text-xl sm:text-2xl'>
               Welcome {userName},
             </h2>
-            <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5'>
+            <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5 select-none'>
+              <button
+                className='flex items-center justify-center px-3 rounded-[4px] h-12 hover:bg-surface-crystal-60 transition-colors duration-100'
+                aria-label='Search'
+              >
+                <Image
+                  src={magnifyingGlassSrc}
+                  alt='Search'
+                  width={16}
+                  height={16}
+                  className='min-w-4'
+                />
+              </button>
               <CurrencySelect
                 selectedCurrency={selectedCurrency}
                 onCurrencyChange={setSelectedCurrency}
               />
-              <button
-                className='flex items-center justify-center gap-2 text-sm py-2 sm:py-0'
-                onClick={onAddClick}
-                aria-label='Add new item'
-              >
-                <AddIcon />
-                Add
-              </button>
+              <AddDropdown onAddClick={() => {}} />
             </div>
           </div>
         </div>

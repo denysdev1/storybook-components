@@ -37,13 +37,6 @@ A header component for dashboard pages that displays a welcome message, currency
         type: { summary: 'string' },
       },
     },
-    onAddClick: {
-      action: 'add clicked',
-      description: 'Callback fired when add button is clicked',
-      table: {
-        type: { summary: '() => void' },
-      },
-    },
   },
 } satisfies Meta<typeof DashboardHeader>;
 
